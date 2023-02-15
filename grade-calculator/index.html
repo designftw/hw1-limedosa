@@ -1,31 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<title> Grade Calculator</title>
+	<body style="background-color:rgba(208, 208, 208, 0.793);"></body>
+	<body text="#12003" link="#ff0000" vlink="#ff0000" alink="#ff0000">
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Grade calculator</title>
+	<title>Grade Calculator</title>
 	<script src="index.js" type="module"></script>
+	<!-- <title>Grade Calculator</title> -->
 </head>
+<center><h1>6.S063 Grade Calculator:</h1>
 <body>
 
 <div id="grade_calc">
-	<div>
-		Participation (studio):
-		<input v-model="participation.studio" /> 
-	</div>
-	<div>
-		Participation (homework):
-		<input v-model="participation.feedback" /> / 100
-	</div>
-	<div>
-		Participation (general participation):
-		<input v-model="participation.other" /> / 100
-	</div>
-	<div>{{ homeworks.length }} homeworks:</div>
-	<button @click="addHomework()">Add homework</button>
-	<div>Projected class grade: {{ calculatedGrade }}</div>
-</div>
+	<div style="background-color: rgba(18, 16, 124, 0.417); padding: 10px;">
+		<span style="font-weight: bold;">Studio Participation:</span>
+		<input v-model="participation.studio" style="margin-left: 30px;" /> / 100
+	  </div>
+	  <div style="background-color: rgba(18, 16, 124, 0.204); padding: 10px;">
+		<span style="font-weight: bold;">Feedback Participation:</span>
+		<input v-model="participation.feedback" style="margin-left: 30px;" /> / 100
+	  </div>	  
+	  <div style="background-color: rgba(18, 16, 124, 0.417); padding: 10px;">
+		<span style="font-weight: bold;">General Participation:</span>
+		<input v-model="participation.studio" style="margin-left: 30px;" /> / 100
+	  </div>
+	<!-- <div>
+		Homework:
+		<input v-model="hw.homeworks" /> / 100
+	</div> -->
 
+	  
+	  <div style="background-color: rgba(18, 16, 124, 0.204); padding: 10px;"></divstyle>
+		<iput v-for="(hw, index) in homeworks" :key="index">
+			Homework {{ index + 1 }}:
+			<input v-model="hw" /> / 100
+		</div>
+
+
+	<!-- <div>{{ homeworks.length }} homeworks:</div> -->
+	
+	<button @click="addHomework()">Add homework</button>
+
+	<div>Projected class grade: {{ calculatedGrade }}% </div>
+</div>
+</center>
 </body>
 </html>
