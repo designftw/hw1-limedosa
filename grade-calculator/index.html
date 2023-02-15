@@ -12,7 +12,15 @@
 <div id="grade_calc">
 	<div>
 		Participation (studio):
-		<input v-model="participation.studio" /> / 100
+		<input v-model="participation.studio" /> 
+	</div>
+	<div>
+		Participation (homework):
+		<input v-model="participation.feedback" /> / 100
+	</div>
+	<div>
+		Participation (general participation):
+		<input v-model="participation.other" /> / 100
 	</div>
 	<div>{{ homeworks.length }} homeworks:</div>
 	<button @click="addHomework()">Add homework</button>
