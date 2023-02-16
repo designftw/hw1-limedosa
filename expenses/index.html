@@ -1,10 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Edit this to set page title</title>
+	<meta charset="UTF-8" />
+	<title>Expenses</title>
+
+<body style="background-color: rgba(109, 150, 107, 0.592)"></body>
 </head>
+
 <body>
+	<center>
+		<h1>Couple Expenses App</h1>
+	</center>
+	<hgroup>
+
+	<br />
+	< <h2>Task1: Usability Problems</h2>
+		The most important usability dimension for the app is arguably efficiency. Since this deals with money, it's
+		most crucial that there be no erroneous aspects. The method has a huge learability issue. It's quite impossible
+		to understand how to use the spreadsheet without explicit directions.<br />
+		<br>The spreadsheet itself has a couple of logical flaws. One such flaw is the lack of a "Trinity owes" column. The
+		variables column is unclear, but appears to be what Neo owes duplicated. The first and second columns"Trinity
+		paid for Joint / Joint card paid for Neo" and "Neo paid for Joint / Joint card paid for Trinity", respectively
+		appear to serve the same purpose. They don't divide the costs well. The only columns that are well made are the
+		"Trinity paid for Neo" and "Neo paid for Trinity" columns.<br />
+		<br>The issues affect all aspects of usability. The learnability issue can be fixed by making a clearer spreadsheet.
+		This would entail making it such that all variables are absolutely necesssay. They'd probably include: "T paid
+		for N", "N paid for T", "N owes T", "T owes N", "Joint to be split", "Joint, to be paid by T", "Joint to be paid
+		by N". This allows for their joint accounts to have three different options; splitting the bill in half, Neo
+		paying the bill in full(to be added to what Neo owes), and Trinity paying the bill(to be added to what Trinity
+		owes).
+		This update will allow for all usability issues to be fixed.
+	</hgroup>
+	<hgroup>
+		<br />
+		< <h2>Task 2: Wireframe of App</h2>
+			
+		
+
+		<h4>Split Expenses</h4>
+
+		<form>
+			<label for="item">Item:</label>
+			<input type="text" id="item" name="item"><br>
+			<label for="price">Price:</label>
+			<input type="number" id="price" name="price"><br>
+			<label for="Neo">Neo's split:</label>
+			<input type="number" id="Neo" name="Neo" value=""> % <br>
+			<label for="Trinity">Trinity's split:</label>
+			<input type="number" id="Trinity" name="Trinity" value="">% <br>
+			<button type="submit">Add</button>
+			<button @click="addItem()">Add Item</button> <!-- this allows for users to add items. -->
+
+		  </form>
+		  <div>
+			<h3>Expense Summary: </h3>
+			<p>Item: <span id="result-item"></span></p>
+			<p>Total: $<span id="result-price"></span></p>
+			<p>Neo owes: $<span id="result-Neo"></span></p>
+			<p>Trinity owes: $<span id="result-Trinity"></span></p>
+		  </div>
+<h3>This code allows for each individual item to be split, from 0% to 100%, so one person can pay it all, pay nothing, or pay for a portion of it. All expenses will be totaled at the end.</h3>
+		</hgroup>
 
 </body>
+
 </html>

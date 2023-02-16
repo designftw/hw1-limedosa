@@ -38,8 +38,41 @@
 			Homework {{ index + 1 }}:
 			<input v-model="hw" /> / 100
 		</div>
-
-
+	    <form>
+			<label for="item">Item:</label>
+			<input type="text" id="item" name="item">
+			<label for="price">Price:</label>
+			<input type="number" id="price" name="price">
+			<label for="user1">User 1:</label>
+			<input type="number" id="user1" name="user1" value="50">
+			<label for="user2">User 2:</label>
+			<input type="number" id="user2" name="user2" value="50">
+			<button type="submit">Split</button>
+		  </form>
+		  <div>
+			<h2>Results</h2>
+			<p>Item: <span id="result-item"></span></p>
+			<p>Price: $<span id="result-price"></span></p>
+			<p>User 1 pays: $<span id="result-user1"></span></p>
+			<p>User 2 pays: $<span id="result-user2"></span></p>
+		  </div>
+		  <script>
+			const form = document.querySelector('form');
+			form.addEventListener('submit', function(event) {
+			  event.preventDefault();
+			  const item = document.querySelector('#item').value;
+			  const price = Number(document.querySelector('#price').value);
+			  const user1 = Number(document.querySelector('#user1').value);
+			  const user2 = Number(document.querySelector('#user2').value);
+			  const total = user1 + user2;
+			  const splitPrice1 = (user1 / total) * price;
+			  const splitPrice2 = (user2 / total) * price;
+			  document.querySelector('#result-item').textContent = item;
+			  document.querySelector('#result-price').textContent = price;
+			  document.querySelector('#result-user1').textContent = splitPrice1.toFixed(2);
+			  document.querySelector('#result-user2').textContent = splitPrice2.toFixed(2);
+			});
+		  </script>
 	<!-- <div>{{ homeworks.length }} homeworks:</div> -->
 	
 	<button @click="addHomework()">Add homework</button>
